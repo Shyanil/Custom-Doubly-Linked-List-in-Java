@@ -18,6 +18,9 @@ public class Main {
         ll.display();
         System.out.println("The item is deleted is " + ll.deleteFirst());
         ll.display();
+        System.out.println("The item is deleted is " + ll.deleteLast());
+        ll.display();
+
 
     }
 }

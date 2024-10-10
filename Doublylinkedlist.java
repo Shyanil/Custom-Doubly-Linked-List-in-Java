@@ -89,6 +89,7 @@ public class Doublylinkedlist {
         temp.next.prev = node;              // Make the next node's previous point to the new node
         temp.prev.next = node;              // Link the previous node's next to the new node
         node.prev = temp.prev;              // Set the new node's previous to the node before temp
+        size++;
 
     }
 
@@ -105,7 +106,7 @@ public class Doublylinkedlist {
         if (node.next != null) {            // If the new node is not the last node (i.e., there is a node after it),
             node.next.prev = node;          // Update the 'prev' of the next node to point to the new node (linking backward).
         }
-
+      size++;
     }
 
     public int deleteFirst(){
@@ -118,6 +119,17 @@ public class Doublylinkedlist {
         }
         size--;  // Decrement the size after deletion
         return value;
+    }
+    public  int deleteLast(){
+        Node tempHead = head;
+        Node lastElement = null;
+        while (tempHead.next != null){
+            tempHead = tempHead.next;
+            lastElement = tempHead;
+        }
+        int value = lastElement.value;
+        lastElement.prev.next = null;
+        return  value;
     }
 
 
